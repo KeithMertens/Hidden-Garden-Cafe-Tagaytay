@@ -1,1099 +1,1032 @@
-﻿<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krāv Café Rosario | Cozy Specialty Coffee Shop in Rosario, Batangas</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts: Playfair Display & Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Lucide Icons CDN -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        espresso: '#1A0C08',
-                        roast: '#2C1810',
-                        caramel: '#8B5E3C',
-                        amberGlow: '#D4A373',
-                        cream: '#FAEDCD',
-                        softCream: '#FEFAE0',
-                        warmBg: '#FDFBF7',
-                        accentGold: '#E6A15C'
-                    },
-                    fontFamily: {
-                        serif: ['"Playfair Display"', 'serif'],
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Hidden Garden Cafe Tagaytay is a warm neighborhood café for thoughtful coffee, slow mornings, and easy conversation. Browse the menu, story, gallery, and visit details."
+    />
+    <title>Hidden Garden Cafe Tagaytay | Slow coffee, warm company</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Cormorant+Garamond:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #FDFBF7;
-            color: #2C1810;
-        }
-        .font-playfair {
-            font-family: 'Playfair Display', serif;
-        }
-        .hero-bg {
-            background: linear-gradient(180deg, rgba(26, 12, 8, 0.75) 0%, rgba(44, 24, 16, 0.88) 100%), 
-                        url('https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&q=80&w=1920');
-            background-size: cover;
-            background-position: center;
-        }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 163, 115, 0.25);
-        }
-        .glass-dark {
-            background: rgba(44, 24, 16, 0.85);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(212, 163, 115, 0.2);
-        }
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #FAEDCD;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #8B5E3C;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #2C1810;
-        }
-        .tab-btn.active {
-            background-color: #2C1810;
-            color: #FAEDCD;
-            border-color: #2C1810;
-            box-shadow: 0 4px 14px rgba(44, 24, 16, 0.25);
-        }
+      :root {
+        --bg: #f7f1e8;
+        --bg-strong: #efe2d0;
+        --panel: #fffdf9;
+        --panel-alt: #f1e6d5;
+        --ink: #2f221f;
+        --ink-soft: #5a423d;
+        --muted: #7d635d;
+        --line: rgba(47, 34, 31, 0.12);
+        --espresso: #2a1d1a;
+        --caramel: #b96d36;
+        --sage: #7b8e7b;
+        --sage-deep: #5d6d5b;
+        --shadow: 0 22px 50px rgba(37, 24, 24, 0.12);
+        --shadow-soft: 0 12px 24px rgba(37, 24, 24, 0.08);
+        --container: 1180px;
+      }
 
-        /* Custom Icon Box Styles */
-        .icon-box {
-            width: 3.5rem;
-            height: 3.5rem;
-            border-radius: 1rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #2C1810;
-            color: #FAEDCD;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-            flex-shrink: 0;
-        }
-        .icon-box svg, .icon-box i {
-            width: 1.5rem;
-            height: 1.5rem;
-            stroke-width: 2;
-        }
-        .icon-box img.icon-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 1rem;
-        }
-    </style>
-</head>
-<body class="antialiased selection:bg-amberGlow selection:text-white">
+      * { box-sizing: border-box; }
 
-    <!-- Top Announcement Bar -->
-    <div class="bg-roast text-cream text-xs sm:text-sm py-2 px-4 text-center font-medium flex items-center justify-center gap-2 border-b border-amberGlow/20">
-        <span class="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-        <span>Open Daily 12:00 PM â€“ 8:00 PM on Gualberto Ave, Rosario, Batangas!</span>
-        <a href="#reservation" class="underline hover:text-amberGlow transition-colors hidden sm:inline ml-2">Book a Table â†’</a>
-    </div>
+      html { scroll-behavior: smooth; }
 
-    <!-- Navigation Header -->
-    <header class="sticky top-0 z-40 bg-warmBg/90 backdrop-blur-md border-b border-amberGlow/15 transition-all duration-300" id="main-header">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Brand Logo -->
-            <a href="#" class="flex items-center gap-3 group">
-                <div class="w-11 h-11 rounded-full bg-roast text-cream flex items-center justify-center font-serif text-xl font-bold shadow-md group-hover:bg-caramel transition-colors border-2 border-amberGlow/50">
-                    KR
-                </div>
-                <div>
-                    <span class="font-serif text-xl sm:text-2xl font-bold tracking-tight text-roast block leading-none">Krāv Café</span>
-                    <span class="text-[10px] tracking-[0.25em] font-semibold text-caramel uppercase block mt-1">ROSARIO â€¢ BATANGAS</span>
-                </div>
-            </a>
+      body {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.6;
+      }
 
-            <!-- Desktop Nav Links -->
-            <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-roast">
-                <a href="#about" class="hover:text-caramel transition-colors">About Us</a>
-                <a href="#menu" class="hover:text-caramel transition-colors">Our Menu</a>
-                <a href="#loyalty" class="hover:text-caramel transition-colors">Loyalty Card</a>
-                <a href="#features" class="hover:text-caramel transition-colors">Why KR</a>
-                <a href="#reviews" class="hover:text-caramel transition-colors">Reviews</a>
-                <a href="#location" class="hover:text-caramel transition-colors">Visit & Contact</a>
-            </nav>
+      img { display: block; max-width: 100%; }
+      a { color: inherit; text-decoration: none; }
+      button, input, textarea { font: inherit; }
 
-            <!-- Header Action Buttons -->
-            <div class="hidden md:flex items-center gap-3">
-                <a href="https://www.facebook.com/chncaferosariobatangas" target="_blank" class="text-roast hover:text-caramel p-2 rounded-full border border-roast/15 hover:border-caramel text-sm flex items-center gap-2 transition-all">
-                    <i class="fa-brands fa-facebook text-xs"></i>
-                    <span class="text-xs font-semibold">Message Us</span>
-                </a>
-                <button onclick="openModal('reserveModal')" class="bg-roast hover:bg-caramel text-cream px-5 py-2.5 rounded-full font-medium text-sm shadow-md hover:shadow-lg transition-all transform hover:-translate-y-0.5">
-                    Reserve Table
-                </button>
-            </div>
+      .container {
+        width: min(var(--container), calc(100% - 2rem));
+        margin: 0 auto;
+      }
 
-            <!-- Mobile Hamburger Button -->
-            <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl border border-roast/20 text-roast hover:bg-cream transition-colors" aria-label="Toggle Navigation">
-                <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
-            </button>
+      .section { padding: 5.5rem 0; }
+      .section-head { max-width: 640px; margin-bottom: 2.4rem; }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        margin: 0 0 1rem;
+        font-size: 0.78rem;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--caramel);
+        font-weight: 800;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 2.2rem;
+        height: 1px;
+        background: currentColor;
+      }
+
+      h1, h2, h3 {
+        margin: 0;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 600;
+        letter-spacing: -0.03em;
+        line-height: 0.92;
+      }
+      h1 { font-size: clamp(3.5rem, 7vw, 6.3rem); }
+      h2 { font-size: clamp(2.6rem, 5vw, 4rem); }
+      h3 { font-size: clamp(2rem, 3vw, 2.7rem); }
+      p { margin: 0; color: var(--ink-soft); font-size: 1.03rem; }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.55rem;
+        min-height: 52px;
+        padding: 0.9rem 1.4rem;
+        border-radius: 999px;
+        border: 1px solid transparent;
+        font-size: 0.82rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        font-weight: 800;
+        transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+        cursor: pointer;
+      }
+      .button:hover, .button:focus-visible { transform: translateY(-1px); }
+      .button-primary {
+        background: var(--espresso);
+        color: #fffaf5;
+        box-shadow: var(--shadow-soft);
+      }
+      .button-primary:hover, .button-primary:focus-visible { background: #1e1817; }
+      .button-secondary {
+        background: rgba(255, 255, 255, 0.08);
+        color: var(--ink);
+        border-color: rgba(47, 34, 31, 0.15);
+      }
+      .button-secondary:hover, .button-secondary:focus-visible { background: rgba(255, 255, 255, 0.18); }
+
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 40;
+        background: rgba(247, 241, 232, 0.78);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      }
+      .site-header.scrolled {
+        border-bottom-color: var(--line);
+        box-shadow: 0 6px 24px rgba(37, 24, 24, 0.04);
+      }
+
+      .nav-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        min-height: 82px;
+      }
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.85rem;
+      }
+      .brand-mark {
+        width: 42px;
+        height: 42px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: var(--espresso);
+        color: #f5efe7;
+        font-family: "Cormorant Garamond", serif;
+        font-weight: 700;
+        font-size: 1.45rem;
+      }
+      .brand-copy { display: flex; flex-direction: column; gap: 0.1rem; }
+      .brand-copy strong {
+        font-size: 1.25rem;
+        line-height: 1.1;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+      }
+      .brand-copy span {
+        font-size: 0.64rem;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--caramel);
+        font-weight: 800;
+      }
+
+      .site-nav {
+        display: flex;
+        align-items: center;
+        gap: 1.7rem;
+        font-size: 0.83rem;
+        letter-spacing: 0.04em;
+        color: var(--ink-soft);
+      }
+      .site-nav a { position: relative; padding-bottom: 0.2rem; }
+      .site-nav a::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -0.15rem;
+        width: 100%;
+        height: 1px;
+        background: currentColor;
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.2s ease;
+      }
+      .site-nav a:hover::after, .site-nav a:focus-visible::after, .site-nav a.active::after { transform: scaleX(1); }
+
+      .nav-actions { display: flex; align-items: center; gap: 0.75rem; }
+      .menu-toggle {
+        display: none;
+        width: 46px;
+        height: 46px;
+        border: 1px solid var(--line);
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+        color: var(--ink);
+        cursor: pointer;
+      }
+      .mobile-menu { display: none; padding: 0 1rem 1rem; }
+      .mobile-menu.open { display: block; }
+      .mobile-links {
+        display: grid;
+        gap: 0.3rem;
+        padding: 1rem;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: rgba(255, 253, 249, 0.9);
+      }
+      .mobile-links a {
+        padding: 0.9rem 0.8rem;
+        border-radius: 12px;
+        color: var(--ink-soft);
+        font-weight: 700;
+      }
+      .mobile-links a:hover, .mobile-links a:focus-visible {
+        background: rgba(185, 109, 54, 0.08);
+        color: var(--ink);
+      }
+
+      .hero { position: relative; overflow: hidden; }
+      .hero-inner {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: center;
+        gap: clamp(2rem, 4vw, 4rem);
+        padding: 4rem 0 3.5rem;
+      }
+      .hero-copy { display: grid; gap: 1.35rem; z-index: 1; }
+      .hero-copy h1 { max-width: 620px; }
+      .hero-copy > p { max-width: 560px; font-size: 1.08rem; }
+      .cta-row { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.4rem; }
+      .hero-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.9rem 1.5rem;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+      }
+      .hero-meta li { display: flex; align-items: center; gap: 0.5rem; }
+      .hero-meta li::before {
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--caramel);
+      }
+
+      .hero-visual { position: relative; }
+      .hero-photo {
+        width: 100%;
+        min-height: 620px;
+        object-fit: cover;
+        border-radius: 32px 32px 18px 18px;
+        box-shadow: var(--shadow);
+      }
+      .floating-note {
+        position: absolute;
+        right: -1.2rem;
+        bottom: 1.5rem;
+        display: grid;
+        gap: 0.2rem;
+        width: min(280px, 72%);
+        padding: 1.1rem 1.2rem;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 18px;
+        background: rgba(42, 29, 26, 0.75);
+        backdrop-filter: blur(12px);
+        color: #f7f0e7;
+        box-shadow: var(--shadow-soft);
+      }
+      .floating-note strong { font-size: 1.15rem; }
+      .floating-note span {
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: rgba(249, 240, 229, 0.75);
+      }
+
+      .feature-strip {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 1rem;
+        margin-top: 2.5rem;
+      }
+      .feature-chip {
+        display: grid;
+        gap: 0.55rem;
+        padding: 1.3rem 1.1rem;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(255, 255, 255, 0.3);
+      }
+      .feature-chip strong { font-size: 1.2rem; }
+      .feature-chip span { color: var(--ink-soft); font-size: 0.92rem; }
+
+      .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 1.5rem;
+      }
+      .menu-card {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: var(--panel);
+        box-shadow: var(--shadow-soft);
+      }
+      .menu-image-wrap { overflow: hidden; background: #e9dcc3; }
+      .menu-image {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        transition: transform 0.4s ease;
+      }
+      .menu-card:hover .menu-image, .menu-card:focus-within .menu-image { transform: scale(1.05); }
+      .menu-body { display: grid; gap: 0.9rem; padding: 1.2rem 1.2rem 1.4rem; }
+      .menu-head { display: flex; align-items: start; justify-content: space-between; gap: 0.5rem; }
+      .menu-head h3 { font-size: clamp(1.9rem, 2vw, 2.35rem); }
+      .price { font-size: 1.05rem; font-weight: 800; color: var(--caramel); }
+      .menu-body p { color: var(--ink-soft); }
+
+      .story { background: rgba(255, 255, 255, 0.22); }
+      .story-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.05fr;
+        align-items: center;
+        gap: clamp(2rem, 5vw, 4rem);
+      }
+      .story-copy { display: grid; gap: 1.2rem; }
+      .story-copy p { font-size: 1.02rem; }
+      .story-visual { position: relative; }
+      .story-photo {
+        width: 100%;
+        max-height: 740px;
+        object-fit: cover;
+        border-radius: 28px;
+        box-shadow: var(--shadow);
+      }
+      .story-quote {
+        position: absolute;
+        left: -1.3rem;
+        bottom: 1.8rem;
+        width: min(260px, 72%);
+        padding: 1.2rem 1.1rem;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: rgba(255, 250, 245, 0.9);
+        box-shadow: var(--shadow-soft);
+      }
+      .story-quote strong { display: block; margin-bottom: 0.2rem; font-size: 1.15rem; }
+
+      .experience-cards { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; }
+      .experience-card {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        background: var(--panel);
+        box-shadow: var(--shadow-soft);
+      }
+      .experience-card img { width: 100%; height: 280px; object-fit: cover; }
+      .experience-content { display: grid; gap: 0.7rem; padding: 1.2rem 1.2rem 1.5rem; }
+      .experience-content p { color: var(--ink-soft); }
+
+      .gallery-grid { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1rem; }
+      .gallery-item {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        border-radius: 18px;
+        min-height: 220px;
+        box-shadow: var(--shadow-soft);
+      }
+      .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.35s ease; }
+      .gallery-item:hover img, .gallery-item:focus-visible img { transform: scale(1.04); }
+      .gallery-item:nth-child(1) { grid-column: span 4; grid-row: span 2; min-height: 420px; }
+      .gallery-item:nth-child(2) { grid-column: span 4; min-height: 200px; }
+      .gallery-item:nth-child(3) { grid-column: span 4; min-height: 200px; }
+      .gallery-item:nth-child(4) { grid-column: span 5; min-height: 220px; }
+      .gallery-item:nth-child(5) { grid-column: span 3; min-height: 220px; }
+      .gallery-item:nth-child(6) { grid-column: span 4; min-height: 220px; }
+
+      .visit { background: linear-gradient(180deg, rgba(255,255,255,0.24), rgba(241,230,213,0.35)); }
+      .visit-grid { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: clamp(1.5rem, 5vw, 4rem); align-items: start; }
+      .visit-card, .contact-card {
+        border: 1px solid var(--line);
+        border-radius: 24px;
+        background: rgba(255,255,255,0.3);
+        box-shadow: var(--shadow-soft);
+      }
+      .visit-card { padding: 1.5rem; }
+      .info-list { display: grid; gap: 1rem; margin-top: 1.3rem; }
+      .info-item { display: grid; grid-template-columns: 40px 1fr; gap: 0.9rem; align-items: start; }
+      .info-item .icon {
+        width: 40px;
+        height: 40px;
+        display: grid;
+        place-items: center;
+        border-radius: 50%;
+        background: rgba(185, 109, 54, 0.12);
+        color: var(--caramel);
+        font-size: 1rem;
+      }
+      .info-item strong {
+        display: block;
+        font-size: 0.72rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .info-item p, .info-item a { color: var(--ink); font-weight: 600; }
+      .visit-actions { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.5rem; }
+      .contact-card { padding: 1.4rem; }
+      form { display: grid; gap: 1rem; }
+      .field { display: grid; gap: 0.42rem; }
+      .field label {
+        font-size: 0.76rem;
+        text-transform: uppercase;
+        letter-spacing: 0.12em;
+        font-weight: 800;
+        color: var(--muted);
+      }
+      .field input, .field textarea {
+        width: 100%;
+        padding: 0.9rem 1rem;
+        border: 1px solid rgba(47, 34, 31, 0.12);
+        border-radius: 14px;
+        background: rgba(255,255,255,0.6);
+        color: var(--ink);
+      }
+      .field input:focus, .field textarea:focus {
+        outline: 2px solid rgba(185, 109, 54, 0.35);
+        border-color: rgba(185, 109, 54, 0.38);
+      }
+      .field textarea { min-height: 130px; resize: vertical; }
+      .status { min-height: 1.2rem; font-size: 0.92rem; margin-top: 0.2rem; }
+      .status.error { color: #8d2c2c; }
+      .status.success { color: #1e5c43; }
+
+      .site-footer {
+        padding: 1.8rem 0 2.5rem;
+        border-top: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.22);
+      }
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+      .footer-meta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+      .footer-links {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+        font-size: 0.82rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity 0.65s ease, transform 0.65s ease;
+      }
+      .reveal.visible { opacity: 1; transform: translateY(0); }
+
+      @media (max-width: 960px) {
+        .hero-inner, .story-grid, .visit-grid, .menu-grid, .experience-cards { grid-template-columns: 1fr; }
+        .feature-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .nav-actions .button-primary { display: none; }
+        .site-nav { display: none; }
+        .menu-toggle { display: grid; place-items: center; }
+      }
+      @media (max-width: 640px) {
+        .section { padding: 4.5rem 0; }
+        .hero-inner { padding-top: 2.5rem; }
+        .hero-photo { min-height: 420px; }
+        .floating-note { position: static; margin-top: 1rem; width: 100%; }
+        .feature-strip { grid-template-columns: 1fr; }
+        .gallery-grid { display: block; }
+        .gallery-item { margin-bottom: 1rem; min-height: 260px; }
+        .gallery-item:nth-child(n) { grid-column: auto; grid-row: auto; min-height: 260px; }
+        .footer-inner { flex-direction: column; align-items: flex-start; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { animation: none !important; transition: none !important; }
+        .reveal { opacity: 1; transform: none; }
+      }
+   
+      .menu-book-wrap { display: grid; gap: 1.4rem; justify-items: center; }
+      .book { position: relative; width: min(1000px, 100%); height: 680px; perspective: 2600px; transition: transform 0.8s ease; }
+      .book.start { transform: translateX(-25%); }
+      .book.end { transform: translateX(25%); }
+      .book.single { width: min(440px, 100%); height: 640px; }
+      .leaf { position: absolute; top: 0; left: 50%; width: 50%; height: 100%; transform-origin: left center; transform-style: preserve-3d; transition: transform 0.9s cubic-bezier(0.4, 0.1, 0.2, 1); }
+      .single .leaf { left: 0; width: 100%; }
+      .leaf.flipped { transform: rotateY(-180deg); }
+      .face { position: absolute; inset: 0; overflow: hidden; backface-visibility: hidden; -webkit-backface-visibility: hidden; background: var(--panel); border: 1px solid var(--line); }
+      .front { border-radius: 4px 18px 18px 4px; box-shadow: var(--shadow); background: linear-gradient(90deg, rgba(0,0,0,0.09), transparent 7%), var(--panel); }
+      .back { transform: rotateY(180deg); border-radius: 18px 4px 4px 18px; box-shadow: var(--shadow); background: linear-gradient(270deg, rgba(0,0,0,0.09), transparent 7%), var(--panel); }
+      .single .front { border-radius: 18px; }
+      .single .back { display: none; }
+      .face.cover { background: var(--espresso); color: #f7f0e7; border-color: transparent; }
+      .face.cover p, .face.cover h3 { color: #f7f0e7; }
+      .pg { position: relative; height: 100%; overflow-y: auto; padding: 2.2rem 2.2rem 3.2rem; display: block; }
+      .pg h3 { margin: 0 0 0.6rem; }
+      .pg .note { font-size: 0.88rem; font-style: italic; margin-bottom: 1rem; }
+      .pg .sub { margin: 1rem 0 0.8rem; }
+      .pg .pn { position: absolute; bottom: 1rem; left: 0; right: 0; text-align: center; font-size: 0.75rem; letter-spacing: 0.14em; color: var(--muted); }
+      .pg.cc { display: grid; align-content: center; justify-items: center; text-align: center; gap: 1rem; }
+      .pg.cc .brand-mark { width: 72px; height: 72px; font-size: 2.4rem; background: #f5efe7; color: var(--espresso); }
+      .pg.cc .eyebrow { margin: 0; color: #e0a46f; }
+      .pg ul { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; gap: 0.6rem; }
+      .pg li { font-family: "Cormorant Garamond", serif; font-size: 1.5rem; font-weight: 600; border-bottom: 1px dotted var(--line); }
+      .it { margin: 0 0 1rem; }
+      .it-h { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px dotted var(--line); }
+      .nm { font-family: "Cormorant Garamond", serif; font-size: 1.35rem; font-weight: 700; line-height: 1.15; }
+      .it .price { white-space: nowrap; font-size: 0.95rem; }
+      .it p { font-size: 0.85rem; line-height: 1.45; margin-top: 0.25rem; }
+      .book-controls { display: flex; align-items: center; gap: 1.2rem; }
+      #book-ind { min-width: 5rem; text-align: center; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-soft); }
+      .book-controls .button[disabled] { opacity: 0.4; pointer-events: none; }
+      @media (max-width: 760px) { .pg { padding: 1.6rem 1.3rem 3rem; } }
+   </style>
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a href="#top" class="brand" aria-label="Hidden Garden Cafe Tagaytay home">
+          <span class="brand-mark">HG</span>
+          <div class="brand-copy">
+            <strong>Hidden Garden Cafe</strong>
+            <span>Tagaytay</span>
+          </div>
+        </a>
+
+        <nav class="site-nav" aria-label="Main navigation">
+          <a href="#menu">Menu</a>
+          <a href="#story">Our Story</a>
+          <a href="#experience">Experience</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#visit">Visit Us</a>
+        </nav>
+
+        <div class="nav-actions">
+          <a class="button button-primary" href="#visit">Reserve a table</a>
+          <button class="menu-toggle" aria-expanded="false" aria-controls="mobile-menu" type="button">☰</button>
         </div>
+      </div>
 
-        <!-- Mobile Menu Dropdown -->
-        <div id="mobileMenu" class="hidden md:hidden bg-warmBg border-b border-amberGlow/20 px-4 pt-3 pb-6 shadow-xl transition-all">
-            <nav class="flex flex-col space-y-3 font-medium text-roast text-base">
-                <a href="#about" onclick="toggleMobileMenu()" class="py-2 border-b border-roast/5 flex items-center justify-between">
-                    <span>About Us</span> <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
-                </a>
-                <a href="#menu" onclick="toggleMobileMenu()" class="py-2 border-b border-roast/5 flex items-center justify-between">
-                    <span>Our Menu</span> <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
-                </a>
-                <a href="#loyalty" onclick="toggleMobileMenu()" class="py-2 border-b border-roast/5 flex items-center justify-between">
-                    <span>Loyalty Card</span> <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
-                </a>
-                <a href="#features" onclick="toggleMobileMenu()" class="py-2 border-b border-roast/5 flex items-center justify-between">
-                    <span>Why Krāv Café</span> <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
-                </a>
-                <a href="#reviews" onclick="toggleMobileMenu()" class="py-2 border-b border-roast/5 flex items-center justify-between">
-                    <span>Customer Reviews</span> <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
-                </a>
-                <a href="#location" onclick="toggleMobileMenu()" class="py-2 border-b border-roast/5 flex items-center justify-between">
-                    <span>Location & Hours</span> <i class="fa-solid fa-chevron-right text-xs opacity-50"></i>
-                </a>
-            </nav>
-            <div class="mt-5 flex flex-col gap-2.5">
-                <button onclick="toggleMobileMenu(); openModal('reserveModal');" class="w-full text-center bg-roast text-cream font-medium py-3 rounded-xl shadow-md">
-                    Reserve Table / Inquiry
-                </button>
-                <a href="https://www.bing.com/maps?q=Gualberto+Avenue,+Rosario,+Batangas" target="_blank" class="w-full text-center bg-cream border border-roast/20 text-roast font-medium py-2.5 rounded-xl flex items-center justify-center gap-2">
-                    <i class="fa-solid fa-location-dot text-caramel"></i> Get Map Directions
-                </a>
-            </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <div class="container mobile-links">
+          <a href="#menu">Menu</a>
+          <a href="#story">Our Story</a>
+          <a href="#experience">Experience</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#visit">Visit Us</a>
+          <a href="#visit" class="button button-primary" style="justify-content:center;">Reserve a table</a>
         </div>
+      </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-[85vh] hero-bg flex items-center justify-center text-cream px-4 py-16 sm:py-24">
-        <div class="max-w-5xl mx-auto text-center relative z-10">
-            <!-- Badges Bar -->
-            <div class="inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 bg-espresso/80 backdrop-blur-md px-4 py-2 rounded-full border border-amberGlow/30 mb-8 shadow-xl">
-                <span class="flex items-center gap-1.5 text-xs sm:text-sm font-semibold text-amberGlow">
-                    <i class="fa-solid fa-star text-amber-400"></i> Specialty Calibrated Coffee
-                </span>
-                <span class="text-amberGlow/40">â€¢</span>
-                <span class="flex items-center gap-1.5 text-xs sm:text-sm font-medium text-cream">
-                    <i class="fa-solid fa-mug-hot text-amberGlow"></i> Spanish Lattes & Ade
-                </span>
-                <span class="text-amberGlow/40">â€¢</span>
-                <span class="flex items-center gap-1.5 text-xs sm:text-sm font-medium text-cream">
-                    <i class="fa-solid fa-heart text-amberGlow"></i> Simple Things That Touch The Heart
-                </span>
-            </div>
-
-            <h1 class="font-playfair text-4xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6 text-softCream">
-                Calibrated Specialty Coffee & Cozy Hangouts in Rosario
-            </h1>
-            <p class="text-base sm:text-xl text-cream/90 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-                Welcome to <span class="font-semibold text-amberGlow">Krāv Café</span> at Lardz Building, Gualberto Avenue, Poblacion, Rosario, Batangas. Your warm local sanctuary for premium espresso, refreshingly sweet citrus ades, and good work spaces.
+    <main>
+      <section class="hero">
+        <div class="container hero-inner">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">A little pause in the middle of everything.</p>
+            <h1>Slow mornings. Better coffee. More room to breathe.</h1>
+            <p>
+              Hidden Garden Cafe Tagaytay is a warm neighborhood café for thoughtful coffee, easy conversation,
+              and slower days that deserve a little more sunlight.
             </p>
-
-            <!-- Call to Actions -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
-                <a href="#menu" class="w-full sm:w-auto bg-amberGlow hover:bg-caramel text-espresso hover:text-cream font-bold px-8 py-4 rounded-full transition-all shadow-lg hover:shadow-2xl flex items-center justify-center gap-2 text-base">
-                    <i class="fa-solid fa-mug-hot"></i> Explore Our Menu
-                </a>
-                <button onclick="openModal('reserveModal')" class="w-full sm:w-auto bg-warmBg/10 hover:bg-warmBg/20 border border-cream/30 backdrop-blur-md text-cream font-semibold px-8 py-4 rounded-full transition-all flex items-center justify-center gap-2 text-base">
-                    <i class="fa-solid fa-calendar-check text-amberGlow"></i> Reserve / Inquire
-                </button>
+            <div class="cta-row">
+              <a class="button button-primary" href="#menu">See the menu</a>
+              <a class="button button-secondary" href="#visit">Plan your visit</a>
             </div>
+            <ul class="hero-meta" aria-label="Hidden Garden Cafe Tagaytay quick facts">
+              <li>Freshly brewed daily</li>
+              <li>Brunch + pastries</li>
+              <li>Quiet corner tables</li>
+            </ul>
+          </div>
 
-            <!-- Highlights Quick Strip -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-16 text-left max-w-4xl mx-auto pt-8 border-t border-cream/15">
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-amberGlow/20 flex items-center justify-center text-amberGlow flex-shrink-0">
-                        <i class="fa-solid fa-laptop text-amberGlow"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs text-cream/70">Work Friendly</p>
-                        <p class="text-sm font-semibold text-cream">Cozy Study Vibe</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-amberGlow/20 flex items-center justify-center text-amberGlow flex-shrink-0">
-                        <i class="fa-solid fa-mug-hot text-amberGlow"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs text-cream/70">Specialty Brews</p>
-                        <p class="text-sm font-semibold text-cream">Calibrated Daily</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-amberGlow/20 flex items-center justify-center text-amberGlow flex-shrink-0">
-                        <i class="fa-solid fa-clock"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs text-cream/70">Store Hours</p>
-                        <p class="text-sm font-semibold text-cream">12:00 PM â€“ 8:00 PM</p>
-                    </div>
-                </div>
-                <div class="flex items-center gap-3">
-                    <div class="w-10 h-10 rounded-full bg-amberGlow/20 flex items-center justify-center text-amberGlow flex-shrink-0">
-                        <i class="fa-solid fa-utensils"></i>
-                    </div>
-                    <div>
-                        <p class="text-xs text-cream/70">Great Food</p>
-                        <p class="text-sm font-semibold text-cream">Pastas & Pastries</p>
-                    </div>
-                </div>
+          <div class="hero-visual reveal">
+            <img
+              class="hero-photo"
+              src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=1200&q=80"
+              alt="A cozy café interior with warm lighting and coffee cups on a wooden table"
+            />
+            <div class="floating-note">
+              <span>Today’s mood</span>
+              <strong>Slow pour, golden light, and a good conversation.</strong>
             </div>
+          </div>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <!-- Left Text Content -->
-            <div class="lg:col-span-6 space-y-6">
-                <div class="inline-flex items-center gap-2 text-caramel font-semibold text-sm tracking-wider uppercase bg-cream/80 px-3.5 py-1.5 rounded-full">
-                    <i class="fa-solid fa-heart text-xs"></i> About Krāv Café Rosario
-                </div>
-                <h2 class="font-playfair text-3xl sm:text-5xl font-bold text-roast leading-tight">
-                    Simple Things That Touch the Heart in Rosario, Batangas
-                </h2>
-                <p class="text-roast/80 text-base sm:text-lg leading-relaxed">
-                    Located at Unit R12, Lardz Building on Gualberto Avenue in Poblacion, Rosario, <span class="font-semibold text-roast">Krāv Café</span> provides a refreshing atmosphere where friends, students, and coffee lovers gather.
-                </p>
-                <p class="text-roast/80 text-base leading-relaxed">
-                    We take pride in our meticulously calibrated specialty coffees, signature Spanish lattes, top-tier citron ades, and cozy ambiance that makes it a great spot to work outside your home or unwind after a busy day.
-                </p>
-
-                <!-- Key Features List -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
-                    <div class="flex items-start gap-3 p-3.5 bg-warmBg border border-amberGlow/20 rounded-xl shadow-sm">
-                        <i class="fa-solid fa-mug-saucer text-caramel text-xl mt-1"></i>
-                        <div>
-                            <h4 class="font-bold text-roast text-sm">Calibrated Espresso</h4>
-                            <p class="text-xs text-roast/70">Expertly dialed-in espresso beans for rich, smooth notes.</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start gap-3 p-3.5 bg-warmBg border border-amberGlow/20 rounded-xl shadow-sm">
-                        <i class="fa-solid fa-house-chimney text-caramel text-xl mt-1"></i>
-                        <div>
-                            <h4 class="font-bold text-roast text-sm">Comfortable & Inviting</h4>
-                            <p class="text-xs text-roast/70">Warm aesthetic designed for relaxing chats and productivity.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-2 flex flex-wrap gap-4 items-center">
-                    <a href="#menu" class="bg-roast hover:bg-caramel text-cream font-medium px-6 py-3 rounded-xl transition-colors shadow-md inline-flex items-center gap-2">
-                        <span>See Menu Highlights</span> <i class="fa-solid fa-arrow-right text-xs"></i>
-                    </a>
-                    <div class="flex items-center gap-3 text-sm text-roast/80">
-                        <i class="fa-solid fa-location-dot text-caramel"></i>
-                        <span>Gualberto Ave, Poblacion, Rosario, Batangas</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right Visual Gallery Grid -->
-            <div class="lg:col-span-6 grid grid-cols-2 gap-4 relative">
-                <div class="absolute -top-6 -left-6 w-32 h-32 bg-cream rounded-full -z-10 blur-xl opacity-70"></div>
-                
-                <div class="space-y-4">
-                    <div class="overflow-hidden rounded-2xl shadow-lg border-2 border-amberGlow/20 group">
-                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80&w=800" alt="Cafe Atmosphere" class="w-full h-52 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                    <div class="bg-roast text-cream p-5 rounded-2xl shadow-md border border-amberGlow/30 text-center">
-                        <p class="font-playfair text-3xl font-bold text-amberGlow mb-1">12PM - 8PM</p>
-                        <p class="text-xs uppercase tracking-widest font-semibold text-cream/90">Daily Operating Hours</p>
-                        <p class="text-xs text-cream/70 mt-1">Always open to serve your cravings</p>
-                    </div>
-                </div>
-
-                <div class="space-y-4 pt-6 sm:pt-10">
-                    <div class="bg-cream p-5 rounded-2xl shadow-md border border-amberGlow/30 text-center">
-                        <p class="font-playfair text-3xl font-bold text-roast mb-1">Top Tier</p>
-                        <p class="text-xs uppercase tracking-widest font-semibold text-caramel">Citron Ades & Lattes</p>
-                        <p class="text-xs text-roast/70 mt-1">Refreshing drinks crafted fresh</p>
-                    </div>
-                    <div class="overflow-hidden rounded-2xl shadow-lg border-2 border-amberGlow/20 group">
-                        <img src="https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&q=80&w=800" alt="Coffee Brewing" class="w-full h-52 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-500">
-                    </div>
-                </div>
-            </div>
+        <div class="container feature-strip reveal" aria-label="Hidden Garden Cafe Tagaytay highlights">
+          <article class="feature-chip">
+            <strong>Single-origin</strong>
+            <span>Thoughtful beans with clean, balanced notes.</span>
+          </article>
+          <article class="feature-chip">
+            <strong>Fresh pastry</strong>
+            <span>Baked in-house and served warm each morning.</span>
+          </article>
+          <article class="feature-chip">
+            <strong>Quiet corners</strong>
+            <span>Perfect for reading, working, or lingering longer.</span>
+          </article>
+          <article class="feature-chip">
+            <strong>Good company</strong>
+            <span>Simple plates, soft music, and easy conversation.</span>
+          </article>
         </div>
-    </section>
+      </section>
 
-    <!-- Interactive Menu Section -->
-    <section id="menu" class="py-20 bg-cream/40 border-y border-amberGlow/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Section Header -->
-            <div class="text-center max-w-3xl mx-auto mb-12">
-                <span class="text-caramel font-semibold text-sm uppercase tracking-widest bg-warmBg px-4 py-1.5 rounded-full border border-amberGlow/30">
-                    Handcrafted Menu
-                </span>
-                <h2 class="font-playfair text-3xl sm:text-5xl font-bold text-roast mt-4 mb-4">
-                    Brewed to Perfection, Served with a Smile
-                </h2>
-                <p class="text-roast/80 text-base sm:text-lg">
-                    Discover our calibrated signature Spanish lattes, refreshing citron ades, iced coffees, and comforting pastries.
-                </p>
-
-                <!-- Search Input -->
-                <div class="mt-6 max-w-md mx-auto relative">
-                    <input type="text" id="menuSearch" oninput="filterMenu()" placeholder="Search spanish latte, citron ade, cold brew..." class="w-full bg-warmBg border border-amberGlow/40 rounded-full px-5 py-3 pl-11 text-roast placeholder-roast/50 focus:outline-none focus:ring-2 focus:ring-caramel shadow-sm text-sm">
-                    <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-caramel text-sm"></i>
-                </div>
+      <section class="section" id="menu">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Featured menu</p>
+            <h2>Made for slow sips and easy mornings.</h2>
+          </div>
+          <div class="menu-book-wrap reveal">
+            <div class="book" id="book" aria-label="Menu book"></div>
+            <div class="book-controls">
+              <button class="button button-secondary" id="book-prev" type="button">← Prev</button>
+              <span id="book-ind" aria-live="polite"></span>
+              <button class="button button-primary" id="book-next" type="button">Next →</button>
             </div>
-
-            <!-- Menu Category Tabs -->
-            <div class="flex items-center justify-center flex-wrap gap-2 sm:gap-3 mb-10" id="categoryTabs">
-                <button onclick="switchCategory('all')" class="tab-btn active px-5 py-2.5 rounded-full font-medium text-sm border border-roast/20 transition-all duration-200">
-                    âœ¨ All Items
-                </button>
-                <button onclick="switchCategory('espresso')" class="tab-btn px-5 py-2.5 rounded-full font-medium text-sm border border-roast/20 bg-warmBg text-roast hover:bg-roast hover:text-cream transition-all duration-200">
-                    â˜• Signature & Spanish Lattes
-                </button>
-                <button onclick="switchCategory('coldbrew')" class="tab-btn px-5 py-2.5 rounded-full font-medium text-sm border border-roast/20 bg-warmBg text-roast hover:bg-roast hover:text-cream transition-all duration-200">
-                    ðŸ§Š Cold Brew & Iced Coffee
-                </button>
-                <button onclick="switchCategory('ades')" class="tab-btn px-5 py-2.5 rounded-full font-medium text-sm border border-roast/20 bg-warmBg text-roast hover:bg-roast hover:text-cream transition-all duration-200">
-                    ðŸ‹ Citron Ades & Refreshers
-                </button>
-                <button onclick="switchCategory('pastries')" class="tab-btn px-5 py-2.5 rounded-full font-medium text-sm border border-roast/20 bg-warmBg text-roast hover:bg-roast hover:text-cream transition-all duration-200">
-                    ðŸ¥ Pastries & Snacks
-                </button>
-            </div>
-
-            <!-- Menu Items Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="menuGrid">
-                <!-- Items populated dynamically via JS -->
-            </div>
-
-            <!-- No results banner -->
-            <div id="noResults" class="hidden text-center py-12">
-                <i class="fa-solid fa-mug-hot text-4xl text-caramel/50 mb-3 block"></i>
-                <p class="text-roast text-lg font-medium">No menu items found</p>
-                <p class="text-roast/60 text-sm">Try searching for something else or switch categories.</p>
-            </div>
-
-            <!-- Note Footer -->
-            <div class="mt-12 text-center text-xs text-roast/70 border-t border-amberGlow/20 pt-6">
-                ðŸ’¡ <span class="font-semibold">Allergy Note:</span> Please inform our barista of any dietary preferences or milk choices (fresh milk, oat milk) when ordering.
-            </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Loyalty Card Section -->
-    <section id="loyalty" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-10">
-                <span class="inline-flex items-center gap-2 text-caramel font-semibold text-sm uppercase tracking-widest bg-cream px-4 py-1.5 rounded-full border border-amberGlow/30">
-                    <i class="fa-solid fa-stamp"></i> Krāv Café Rewards
-                </span>
-                <h2 class="font-playfair text-3xl sm:text-5xl font-bold text-roast mt-4 mb-3">A Little More with Every Visit</h2>
-                <p class="text-roast/75 text-sm sm:text-base">Collect 12 stamps. Get 50% off on your 6th visit and a free specialty drink on your 12th.</p>
-            </div>
-
-            <div class="bg-roast text-cream rounded-3xl p-6 sm:p-10 shadow-xl border border-amberGlow/30">
-                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
-                    <div>
-                        <p class="text-amberGlow text-xs uppercase tracking-[0.2em] font-bold">Krāv Café ROSARIO</p>
-                        <h3 class="font-playfair text-2xl font-bold text-softCream mt-1">Your Loyalty Card</h3>
-                    </div>
-                    <div class="bg-espresso/70 rounded-2xl px-5 py-3 border border-amberGlow/20 text-center sm:text-right">
-                        <p class="text-amberGlow text-xs font-semibold uppercase tracking-wider">Stamps collected</p>
-                        <p class="font-playfair text-2xl font-bold text-softCream"><span id="loyaltyCount">0</span><span class="text-cream/60 text-base"> / 12</span></p>
-                    </div>
-                </div>
-
-                <div id="loyaltyStamps" class="grid grid-cols-4 sm:grid-cols-6 gap-3 sm:gap-4 mb-8" aria-label="Loyalty card stamps"></div>
-
-                <div class="grid sm:grid-cols-2 gap-3 mb-6">
-                    <div class="rounded-2xl border border-amberGlow/30 bg-espresso/60 p-4 flex items-center gap-3">
-                        <span class="w-11 h-11 rounded-full bg-amberGlow text-espresso flex items-center justify-center font-bold">6</span>
-                        <div>
-                            <p class="font-bold text-softCream">50% off Drink or Pastry</p>
-                            <p class="text-xs text-cream/70">On your 6th visit</p>
-                        </div>
-                    </div>
-                    <div class="rounded-2xl border border-amberGlow/30 bg-espresso/60 p-4 flex items-center gap-3">
-                        <span class="w-11 h-11 rounded-full bg-amberGlow text-espresso flex items-center justify-center font-bold">12</span>
-                        <div>
-                            <p class="font-bold text-softCream">Free Signature Drink</p>
-                            <p class="text-xs text-cream/70">On your 12th visit</p>
-                        </div>
-                    </div>
-                </div>
-
-                <p id="loyaltyMessage" class="min-h-6 text-center text-amberGlow font-semibold text-sm mb-4" role="status" aria-live="polite"></p>
-                <button id="loyaltyStampButton" type="button" onclick="recordLoyaltyPurchase()" class="w-full bg-amberGlow hover:bg-accentGold text-espresso font-bold px-6 py-4 rounded-xl transition-colors flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
-                    <i class="fa-solid fa-stamp"></i> Record completed purchase
-                </button>
-                <p class="text-center text-xs text-cream/60 mt-4">Staff: check the offer before payment, then record one stamp after each completed purchase. Progress is saved only in this browser.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Krāv Café / Features Grid -->
-    <section id="features" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto relative">
-        <div class="text-center max-w-3xl mx-auto mb-12">
-            <div class="flex items-center justify-center gap-3 mb-3">
-                <span class="text-caramel font-semibold text-sm uppercase tracking-widest bg-cream px-4 py-1.5 rounded-full border border-amberGlow/30">
-                    The Krāv Café Experience
-                </span>
-                <button onclick="openModal('iconCustomizerModal')" class="bg-roast hover:bg-caramel text-cream text-xs font-semibold px-3 py-1.5 rounded-full transition-all flex items-center gap-1.5 shadow-sm border border-amberGlow/30">
-                    <i data-lucide="settings" class="w-3.5 h-3.5"></i> Custom Icons
-                </button>
-            </div>
-            <h2 class="font-playfair text-3xl sm:text-5xl font-bold text-roast mt-4 mb-4">
-                Why Batangas Locals Love Krāv Café
-            </h2>
-            <p class="text-roast/80 text-base sm:text-lg">
-                More than just a coffee shopâ€”it's a warm community hub dedicated to calibrated specialty coffee, refreshing ades, and friendly smiles.
+      <section class="section story" id="story">
+        <div class="container story-grid">
+          <div class="story-copy reveal">
+            <p class="eyebrow">Our story</p>
+            <h2>Built for the kind of mornings that need a little stillness.</h2>
+            <p>
+              Hidden Garden Cafe Tagaytay began with a simple idea: a café where people could slow down long enough
+              to taste their coffee, enjoy a warm meal, and feel at ease. We wanted to create a place
+              that feels honest and lived-in — a room with good light, soft music, and enough calm to
+              let the day start well.
             </p>
+            <p>
+              From carefully brewed espresso to simple bites made for lingering, every detail is meant
+              to make the café feel easy to return to. It is a place for early conversations, quiet work,
+              and the kind of afternoons that stretch gently into the evening.
+            </p>
+          </div>
+
+          <div class="story-visual reveal">
+            <img class="story-photo" src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&w=1200&q=80" alt="Warm café interior with wooden textures, coffee, and people enjoying conversation" />
+            <div class="story-quote">
+              <strong>“A café should feel like a pause, not a rush.”</strong>
+              <span>— Hidden Garden Cafe Tagaytay</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="experience">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">The café experience</p>
+            <h2>Comfort in the little rituals.</h2>
+          </div>
+
+          <div class="experience-cards">
+            <article class="experience-card reveal">
+              <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?auto=format&fit=crop&w=900&q=80" alt="Coffee and breakfast at a café table in the morning" />
+              <div class="experience-content">
+                <h3>Slow mornings</h3>
+                <p>Fresh brews, buttery pastry, and soft sunlight for the kind of start that feels unhurried.</p>
+              </div>
+            </article>
+
+            <article class="experience-card reveal">
+              <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=900&q=80" alt="Person working quietly in a café with laptop and coffee" />
+              <div class="experience-content">
+                <h3>Quiet work days</h3>
+                <p>Comfortable seating, warm light, and enough calm for focused hours and slow thinking.</p>
+              </div>
+            </article>
+
+            <article class="experience-card reveal">
+              <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=900&q=80" alt="Friends enjoying coffee and conversation in a café lounge" />
+              <div class="experience-content">
+                <h3>Good company</h3>
+                <p>Easy catch-ups, shared plates, and conversations that stretch naturally into the afternoon.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="gallery">
+        <div class="container">
+          <div class="section-head reveal">
+            <p class="eyebrow">Gallery</p>
+            <h2>Moments worth staying for.</h2>
+          </div>
+
+          <div class="gallery-grid reveal">
+            <a class="gallery-item" href="#visit" aria-label="View café details">
+              <img src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=900&q=80" alt="Café interior with natural light and warm wood tones" />
+            </a>
+            <a class="gallery-item" href="#visit" aria-label="View café details">
+              <img src="https://images.unsplash.com/photo-1559925393-8be0ec4767c8?auto=format&fit=crop&w=900&q=80" alt="Freshly brewed coffee on a cafe table" />
+            </a>
+            <a class="gallery-item" href="#visit" aria-label="View café details">
+              <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80" alt="Pastry and coffee served at a table" />
+            </a>
+            <a class="gallery-item" href="#visit" aria-label="View café details">
+              <img src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?auto=format&fit=crop&w=900&q=80" alt="A person working at a café with a laptop and coffee" />
+            </a>
+            <a class="gallery-item" href="#visit" aria-label="View café details">
+              <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=900&q=80" alt="A café breakfast spread with toast and coffee" />
+            </a>
+            <a class="gallery-item" href="#visit" aria-label="View café details">
+              <img src="https://images.unsplash.com/photo-1504753793650-d4a2b783c15e?auto=format&fit=crop&w=900&q=80" alt="Latte art in a ceramic cup ready to serve" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section visit" id="visit">
+        <div class="container visit-grid">
+          <div class="visit-card reveal">
+            <p class="eyebrow">Visit us</p>
+            <h2>Find your next favorite corner.</h2>
+            <div class="info-list">
+              <div class="info-item">
+                <div class="icon">⌂</div>
+                <div>
+                  <strong>Address</strong>
+                  <p>Tagaytay City, Cavite</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="icon">◔</div>
+                <div>
+                  <strong>Hours</strong>
+                  <p>Mon–Sun · 7:30 AM – 9:00 PM</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="icon">☎</div>
+                <div>
+                  <strong>Call</strong>
+                  <p>+63 900 000 0000</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="icon">✉</div>
+                <div>
+                  <strong>Email</strong>
+                  <a href="mailto:hello@hiddengardencafe.com">hello@hiddengardencafe.com</a>
+                </div>
+              </div>
+              <div class="info-item">
+                <div class="icon">◎</div>
+                <div>
+                  <strong>Social</strong>
+                  <p>Instagram • Facebook • TikTok</p>
+                </div>
+              </div>
+            </div>
+            <div class="visit-actions">
+              <a class="button button-primary" href="https://www.google.com/maps/search/?api=1&amp;query=Hidden+Garden+Cafe+Tagaytay" target="_blank" rel="noopener" aria-label="Get directions on Google Maps">Get directions</a>
+              <a class="button button-secondary" href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram profile">Instagram</a>
+            </div>
+          </div>
+
+          <div class="contact-card reveal">
+            <p class="eyebrow">Send a note</p>
+            <h2>Ask about a table, event, or café inquiry.</h2>
+            <form id="inquiry-form" novalidate>
+              <div class="field">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" />
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" />
+              </div>
+              <div class="field">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us what you’d like to ask about."></textarea>
+              </div>
+              <button class="button button-primary" type="submit">Send inquiry</button>
+              <div class="status" id="form-status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div class="footer-meta">
+          <div class="brand">
+            <span class="brand-mark">HG</span>
+            <div class="brand-copy">
+              <strong>Hidden Garden Cafe</strong>
+              <span>Tagaytay</span>
+            </div>
+          </div>
+          <p>Warm coffee, easy company, and a little more time to linger.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="whyMamushGrid">
-            <!-- Feature 1 -->
-            <div class="bg-warmBg p-8 rounded-3xl border border-amberGlow/25 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" id="card-calibrated">
-                <div>
-                    <div class="icon-box mb-6 group-hover:scale-110 transition-transform" id="icon-slot-calibrated">
-                        <i data-lucide="coffee"></i>
-                    </div>
-                    <h3 class="font-playfair text-2xl font-bold text-roast mb-3">Calibrated Espresso</h3>
-                    <p class="text-roast/75 text-sm leading-relaxed mb-4">
-                        Every shot is carefully dialed in and calibrated to ensure rich, consistent, and premium flavor profiles in every cup.
-                    </p>
-                </div>
-                <div class="text-xs font-semibold text-caramel flex items-center gap-1">
-                    <span>Precision Brewing</span> <i class="fa-solid fa-mug-hot"></i>
-                </div>
-            </div>
-
-            <!-- Feature 2 -->
-            <div class="bg-warmBg p-8 rounded-3xl border border-amberGlow/25 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" id="card-work">
-                <div>
-                    <div class="icon-box mb-6 group-hover:scale-110 transition-transform" id="icon-slot-work">
-                        <i data-lucide="laptop"></i>
-                    </div>
-                    <h3 class="font-playfair text-2xl font-bold text-roast mb-3">Work & Study Friendly</h3>
-                    <p class="text-roast/75 text-sm leading-relaxed mb-4">
-                        A peaceful and inviting atmosphere designed for remote workers, students, and anyone looking for a cozy spot outside the house.
-                    </p>
-                </div>
-                <div class="text-xs font-semibold text-caramel flex items-center gap-1">
-                    <span>Comfortable Spaces</span> <i class="fa-solid fa-wifi"></i>
-                </div>
-            </div>
-
-            <!-- Feature 3 -->
-            <div class="bg-warmBg p-8 rounded-3xl border border-amberGlow/25 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group" id="card-heart">
-                <div>
-                    <div class="icon-box mb-6 group-hover:scale-110 transition-transform" id="icon-slot-heart">
-                        <i data-lucide="heart"></i>
-                    </div>
-                    <h3 class="font-playfair text-2xl font-bold text-roast mb-3">Heartfelt Service</h3>
-                    <p class="text-roast/75 text-sm leading-relaxed mb-4">
-                        Simple things that touch the heart. Our friendly staff welcomes every guest with genuine warmth and top-notch hospitality.
-                    </p>
-                </div>
-                <div class="text-xs font-semibold text-caramel flex items-center gap-1">
-                    <span>Always Welcoming</span> <i class="fa-solid fa-smile"></i>
-                </div>
-            </div>
+        <div class="footer-links" aria-label="Footer links">
+          <a href="#menu">Menu</a>
+          <a href="#story">Our Story</a>
+          <a href="#experience">Experience</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#visit">Visit Us</a>
         </div>
-    </section>
-
-    <!-- Customer Reviews Section -->
-    <section id="reviews" class="py-20 bg-cream/40 border-y border-amberGlow/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <span class="text-caramel font-semibold text-sm uppercase tracking-widest bg-warmBg px-4 py-1.5 rounded-full border border-amberGlow/30">
-                    Community Praise
-                </span>
-                <h2 class="font-playfair text-3xl sm:text-5xl font-bold text-roast mt-4 mb-4">
-                    Loved by Rosario Regulars
-                </h2>
-                <p class="text-roast/80 text-base sm:text-lg">
-                    See what customers are saying about our calibrated coffee, top-tier citron ades, and cozy vibe on Gualberto Avenue.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-warmBg p-8 rounded-3xl border border-amberGlow/30 shadow-sm relative flex flex-col justify-between">
-                    <div>
-                        <div class="flex text-amber-500 gap-1 mb-4 text-sm">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-roast/80 text-sm leading-relaxed italic mb-6">
-                            "The coffee is so good and well-calibrated! Their Spanish latte is easily one of the best around Rosario. Such a cozy spot to chill."
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-roast/10">
-                        <div class="w-10 h-10 rounded-full bg-caramel text-cream font-bold flex items-center justify-center font-serif text-sm">KC</div>
-                        <div>
-                            <p class="font-bold text-roast text-sm">Kyla Castillo</p>
-                            <p class="text-xs text-roast/60">Batangas Local Review</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-warmBg p-8 rounded-3xl border border-amberGlow/30 shadow-sm relative flex flex-col justify-between">
-                    <div>
-                        <div class="flex text-amber-500 gap-1 mb-4 text-sm">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-roast/80 text-sm leading-relaxed italic mb-6">
-                            "Top tier citron ade! It's so refreshing on a warm afternoon. The ambiance inside Lardz Building is very relaxing and great for working."
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-roast/10">
-                        <div class="w-10 h-10 rounded-full bg-caramel text-cream font-bold flex items-center justify-center font-serif text-sm">MR</div>
-                        <div>
-                            <p class="font-bold text-roast text-sm">Mark Ramos</p>
-                            <p class="text-xs text-roast/60">Verified Customer</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="bg-warmBg p-8 rounded-3xl border border-amberGlow/30 shadow-sm relative flex flex-col justify-between">
-                    <div>
-                        <div class="flex text-amber-500 gap-1 mb-4 text-sm">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
-                        </div>
-                        <p class="text-roast/80 text-sm leading-relaxed italic mb-6">
-                            "Simple things that touch the heart indeed. The baristas are so warm and welcoming. Love grabbing my favorite iced coffee here!"
-                        </p>
-                    </div>
-                    <div class="flex items-center gap-3 pt-4 border-t border-roast/10">
-                        <div class="w-10 h-10 rounded-full bg-caramel text-cream font-bold flex items-center justify-center font-serif text-sm">JV</div>
-                        <div>
-                            <p class="font-bold text-roast text-sm">Jessa Villalobos</p>
-                            <p class="text-xs text-roast/60">Rosario Regular</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Location & Contact Section -->
-    <section id="location" class="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            <div class="lg:col-span-5 space-y-6">
-                <span class="text-caramel font-semibold text-sm uppercase tracking-widest bg-cream px-4 py-1.5 rounded-full border border-amberGlow/30">
-                    Visit & Connect
-                </span>
-                <h2 class="font-playfair text-3xl sm:text-5xl font-bold text-roast">
-                    Come Visit Krāv Café in Rosario
-                </h2>
-                <p class="text-roast/80 text-base leading-relaxed">
-                    Located conveniently at Unit R12, Lardz Building on Gualberto Avenue in Poblacion, Rosario, Batangas. Drop by for your daily specialty coffee fix!
-                </p>
-
-                <div class="space-y-4 pt-2">
-                    <div class="flex items-start gap-4 p-4 bg-warmBg border border-amberGlow/25 rounded-2xl">
-                        <div class="w-10 h-10 rounded-xl bg-roast text-cream flex items-center justify-center flex-shrink-0 mt-1">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-roast text-sm">Address</h4>
-                            <p class="text-roast/75 text-sm">Unit R12, Lardz Bldg, 011 Gualberto Ave, Poblacion, Rosario, Batangas, 4225</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4 p-4 bg-warmBg border border-amberGlow/25 rounded-2xl">
-                        <div class="w-10 h-10 rounded-xl bg-roast text-cream flex items-center justify-center flex-shrink-0 mt-1">
-                            <i class="fa-solid fa-clock"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-roast text-sm">Operating Hours</h4>
-                            <p class="text-roast/75 text-sm">Monday â€“ Sunday: 12:00 PM â€“ 8:00 PM</p>
-                        </div>
-                    </div>
-
-                    <div class="flex items-start gap-4 p-4 bg-warmBg border border-amberGlow/25 rounded-2xl">
-                        <div class="w-10 h-10 rounded-xl bg-roast text-cream flex items-center justify-center flex-shrink-0 mt-1">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
-                        <div>
-                            <h4 class="font-bold text-roast text-sm">Contact Number</h4>
-                            <p class="text-roast/75 text-sm">+63 917 105 0378</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="pt-2 flex gap-3">
-                    <a href="https://www.bing.com/maps?q=Gualberto+Avenue,+Rosario,+Batangas" target="_blank" class="bg-roast hover:bg-caramel text-cream font-medium px-6 py-3 rounded-xl transition-colors shadow-md inline-flex items-center gap-2 text-sm">
-                        <i class="fa-solid fa-map-location-dot"></i> Open in Maps
-                    </a>
-                    <a href="https://www.facebook.com/chncaferosariobatangas" target="_blank" class="bg-cream border border-roast/20 text-roast hover:bg-roast hover:text-cream font-medium px-6 py-3 rounded-xl transition-all text-sm flex items-center gap-2">
-                        <i class="fa-brands fa-facebook"></i> Facebook Page
-                    </a>
-                </div>
-            </div>
-
-            <!-- Google Map Embed Container -->
-            <div class="lg:col-span-7">
-                <div class="rounded-3xl overflow-hidden shadow-xl border-2 border-amberGlow/30 h-[450px] relative bg-warmBg">
-                    <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.1!2d121.20588!3d13.84546!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTPCsDUwJzQzLjciTiAxMjHCsDEyJzIxLjIiRQ!5e0!3m2!1sen!2sph!4v1700000000000!5m2!1sen!2sph" 
-                        width="100%" 
-                        height="100%" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Krāv Café Rosario Batangas Location Map">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-roast text-cream py-16 border-t border-amberGlow/20">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
-                <div class="md:col-span-2 space-y-4">
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-cream text-roast flex items-center justify-center font-serif text-lg font-bold">
-                            KR
-                        </div>
-                        <span class="font-serif text-2xl font-bold text-softCream">Krāv Café ROSARIO</span>
-                    </div>
-                    <p class="text-cream/80 text-sm max-w-sm leading-relaxed">
-                        Specialty calibrated coffee, Spanish lattes, and refreshing citron ades located at Lardz Bldg, Gualberto Ave, Poblacion, Rosario, Batangas. Simple things that touch the heart.
-                    </p>
-                    <div class="flex items-center space-x-4 pt-2">
-                        <a href="https://www.facebook.com/chncaferosariobatangas" target="_blank" class="w-10 h-10 rounded-full bg-espresso hover:bg-caramel text-cream flex items-center justify-center transition-colors border border-amberGlow/30" aria-label="Facebook">
-                            <i class="fa-brands fa-facebook-f text-sm"></i>
-                        </a>
-                        <a href="https://www.instagram.com" target="_blank" class="w-10 h-10 rounded-full bg-espresso hover:bg-caramel text-cream flex items-center justify-center transition-colors border border-amberGlow/30" aria-label="Instagram">
-                            <i class="fa-brands fa-instagram text-sm"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <div>
-                    <h4 class="font-serif text-lg font-bold text-softCream mb-4">Quick Links</h4>
-                    <ul class="space-y-2.5 text-sm text-cream/80">
-                        <li><a href="#about" class="hover:text-amberGlow transition-colors">About Us</a></li>
-                        <li><a href="#menu" class="hover:text-amberGlow transition-colors">Our Menu</a></li>
-                        <li><a href="#loyalty" class="hover:text-amberGlow transition-colors">Loyalty Rewards</a></li>
-                        <li><a href="#features" class="hover:text-amberGlow transition-colors">Why KR</a></li>
-                        <li><a href="#reviews" class="hover:text-amberGlow transition-colors">Customer Reviews</a></li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h4 class="font-serif text-lg font-bold text-softCream mb-4">Store Hours</h4>
-                    <ul class="space-y-2.5 text-sm text-cream/80">
-                        <li class="flex justify-between"><span>Monâ€“Sun:</span> <span class="font-semibold text-amberGlow">12:00 PM â€“ 8 PM</span></li>
-                        <li class="pt-3 border-t border-cream/10 text-xs text-cream/60">Gualberto Ave, Rosario, Batangas</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="pt-8 border-t border-cream/15 flex flex-col sm:flex-row items-center justify-between text-xs text-cream/60 gap-4">
-                <p>&copy; 2026 Krāv Café Rosario Batangas. All rights reserved.</p>
-                <div class="flex gap-6">
-                    <a href="#" class="hover:text-amberGlow transition-colors">Privacy Policy</a>
-                    <a href="#" class="hover:text-amberGlow transition-colors">Terms of Service</a>
-                    <a href="#reservation" class="hover:text-amberGlow transition-colors">Table Inquiry</a>
-                </div>
-            </div>
-        </div>
+      </div>
     </footer>
 
-    <!-- Reservation / Inquiry Modal -->
-    <div id="reserveModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-espresso/80 backdrop-blur-sm p-4">
-        <div class="bg-warmBg rounded-3xl max-w-lg w-full p-6 sm:p-8 border border-amberGlow/30 shadow-2xl relative animate-in fade-in zoom-in duration-200">
-            <button onclick="closeModal('reserveModal')" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-cream hover:bg-roast hover:text-cream text-roast flex items-center justify-center transition-colors">
-                <i class="fa-solid fa-xmark text-sm"></i>
-            </button>
-
-            <div class="text-center mb-6">
-                <span class="text-caramel font-semibold text-xs uppercase tracking-widest bg-cream px-3 py-1 rounded-full border border-amberGlow/20">
-                    Krāv Café Table Inquiry
-                </span>
-                <h3 class="font-playfair text-2xl sm:text-3xl font-bold text-roast mt-2">Reserve or Ask Us</h3>
-                <p class="text-roast/70 text-xs sm:text-sm mt-1">Let us know when you're visiting our Rosario branch.</p>
-            </div>
-
-            <form onsubmit="handleReservation(event)" class="space-y-4">
-                <div>
-                    <label class="block text-xs font-semibold text-roast uppercase tracking-wider mb-1">Your Full Name</label>
-                    <input type="text" required placeholder="Juan Dela Cruz" class="w-full bg-cream/50 border border-amberGlow/30 rounded-xl px-4 py-2.5 text-roast text-sm focus:outline-none focus:ring-2 focus:ring-caramel">
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-roast uppercase tracking-wider mb-1">Email or Phone</label>
-                        <input type="text" required placeholder="phone or email" class="w-full bg-cream/50 border border-amberGlow/30 rounded-xl px-4 py-2.5 text-roast text-sm focus:outline-none focus:ring-2 focus:ring-caramel">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-roast uppercase tracking-wider mb-1">Number of Guests</label>
-                        <select class="w-full bg-cream/50 border border-amberGlow/30 rounded-xl px-4 py-2.5 text-roast text-sm focus:outline-none focus:ring-2 focus:ring-caramel">
-                            <option>1â€“2 People (Cozy Table)</option>
-                            <option>3â€“4 People (Small Group)</option>
-                            <option>5+ People (Group Hangout)</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div>
-                        <label class="block text-xs font-semibold text-roast uppercase tracking-wider mb-1">Preferred Date</label>
-                        <input type="date" required class="w-full bg-cream/50 border border-amberGlow/30 rounded-xl px-4 py-2.5 text-roast text-sm focus:outline-none focus:ring-2 focus:ring-caramel">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-semibold text-roast uppercase tracking-wider mb-1">Preferred Time</label>
-                        <input type="time" required class="w-full bg-cream/50 border border-amberGlow/30 rounded-xl px-4 py-2.5 text-roast text-sm focus:outline-none focus:ring-2 focus:ring-caramel">
-                    </div>
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-roast uppercase tracking-wider mb-1">Special Requests / Notes</label>
-                    <textarea rows="2" placeholder="Study spot preference, drink notes..." class="w-full bg-cream/50 border border-amberGlow/30 rounded-xl px-4 py-2.5 text-roast text-sm focus:outline-none focus:ring-2 focus:ring-caramel"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-roast hover:bg-caramel text-cream font-bold py-3.5 rounded-xl transition-colors shadow-md text-sm mt-2">
-                    Submit Inquiry
-                </button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Icon Customizer Modal -->
-    <div id="iconCustomizerModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-espresso/80 backdrop-blur-sm p-4">
-        <div class="bg-warmBg rounded-3xl max-w-md w-full p-6 sm:p-8 border border-amberGlow/30 shadow-2xl relative animate-in fade-in zoom-in duration-200">
-            <button onclick="closeModal('iconCustomizerModal')" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-cream hover:bg-roast hover:text-cream text-roast flex items-center justify-center transition-colors">
-                <i class="fa-solid fa-xmark text-sm"></i>
-            </button>
-
-            <div class="text-center mb-6">
-                <span class="text-caramel font-semibold text-xs uppercase tracking-widest bg-cream px-3 py-1 rounded-full border border-amberGlow/20">
-                    Feature Customizer
-                </span>
-                <h3 class="font-playfair text-2xl font-bold text-roast mt-2">Customize Experience Cards</h3>
-                <p class="text-roast/70 text-xs mt-1">Pick a custom icon style for the features grid.</p>
-            </div>
-
-            <div class="space-y-4">
-                <div>
-                    <label class="block text-xs font-semibold text-roast uppercase tracking-wider mb-1">Card to Customize</label>
-                    <select id="customizerCardSelect" class="w-full bg-cream/50 border border-amberGlow/30 rounded-xl px-4 py-2.5 text-roast text-sm focus:outline-none">
-                        <option value="calibrated">Calibrated Espresso Card</option>
-                        <option value="work">Work & Study Card</option>
-                        <option value="heart">Heartfelt Service Card</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-xs font-semibold text-roast uppercase tracking-wider mb-1">Select Icon Style</label>
-                    <select id="customizerIconSelect" class="w-full bg-cream/50 border border-amberGlow/30 rounded-xl px-4 py-2.5 text-roast text-sm focus:outline-none">
-                        <option value="coffee">Coffee Cup</option>
-                        <option value="laptop">Laptop / Work</option>
-                        <option value="heart">Heart / Love</option>
-                        <option value="smile">Smile / Friendly</option>
-                        <option value="sparkles">Sparkles</option>
-                        <option value="star">Star / Quality</option>
-                    </select>
-                </div>
-                <button onclick="applyCustomIcon()" class="w-full bg-roast hover:bg-caramel text-cream font-bold py-3 rounded-xl transition-colors shadow-md text-sm">
-                    Apply Custom Icon
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Confirmation Modal -->
-    <div id="successModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-espresso/80 backdrop-blur-sm p-4">
-        <div class="bg-warmBg rounded-3xl max-w-sm w-full p-6 text-center border border-amberGlow/30 shadow-2xl">
-            <div class="w-16 h-16 rounded-full bg-green-100 text-green-600 flex items-center justify-center mx-auto mb-4 text-2xl">
-                <i class="fa-solid fa-check"></i>
-            </div>
-            <h3 class="font-playfair text-2xl font-bold text-roast mb-2">Request Received!</h3>
-            <p id="successModalText" class="text-roast/70 text-sm mb-6">Thank you! We've received your request and will get back to you shortly.</p>
-            <button onclick="closeModal('successModal')" class="w-full bg-roast hover:bg-caramel text-cream font-bold py-3 rounded-xl transition-colors text-sm">
-                Got It
-            </button>
-        </div>
-    </div>
-
-    <!-- JavaScript Application Code -->
     <script>
-        // Menu Dataset for Krāv Café Rosario, Batangas
-        const menuItems = [
-            {
-                id: 1,
-                name: "Signature Spanish Latte",
-                category: "espresso",
-                price: "â‚±140.00",
-                badge: "Best Seller",
-                desc: "Our signature calibrated espresso combined with sweetened condensed milk and fresh textured milk.",
-                image: "https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&q=80&w=600"
-            },
-            {
-                id: 2,
-                name: "Top-Tier Citron Ade",
-                category: "ades",
-                price: "â‚±120.00",
-                badge: "Top Tier",
-                desc: "Refreshing, bright citrus ade infused with real fruit notes. Perfectly cooling for Batangas weather.",
-                image: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&q=80&w=600"
-            },
-            {
-                id: 3,
-                name: "Calibrated Cold Brew",
-                category: "coldbrew",
-                price: "â‚±130.00",
-                badge: "Smooth",
-                desc: "Steeped to perfection for a clean, bold, and ultra-smooth flavor profile.",
-                image: "https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?auto=format&fit=crop&q=80&w=600"
-            },
-            {
-                id: 4,
-                name: "CafÃ© Latte",
-                category: "espresso",
-                price: "â‚±130.00",
-                badge: "Classic",
-                desc: "Rich espresso shot balanced with smooth, velvety microfoam steamed milk.",
-                image: "https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&q=80&w=600"
-            },
-            {
-                id: 5,
-                name: "Matcha Latte",
-                category: "coldbrew",
-                price: "â‚±150.00",
-                badge: "Popular",
-                desc: "Premium Japanese green tea matcha whisked smooth with fresh milk.",
-                image: "https://images.unsplash.com/photo-1536256263959-770b48d82b0a?auto=format&fit=crop&q=80&w=600"
-            },
-            {
-                id: 6,
-                name: "Butter Croissant",
-                category: "pastries",
-                price: "â‚±95.00",
-                badge: "Freshly Baked",
-                desc: "Flaky, buttery French pastry baked fresh daily to pair with your espresso.",
-                image: "https://images.unsplash.com/photo-1555507036-ab1f4038808a?auto=format&fit=crop&q=80&w=600"
-            },
-            {
-                id: 7,
-                name: "Americano (Hot or Iced)",
-                category: "espresso",
-                price: "â‚±100.00",
-                badge: "Clean Brew",
-                desc: "Calibrated espresso shots poured over purified water and ice.",
-                image: "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&q=80&w=600"
-            },
-            {
-                id: 8,
-                name: "Peach Fruit Tea Ade",
-                category: "ades",
-                price: "â‚±125.00",
-                badge: "Refreshing",
-                desc: "Sweet peach infusion blended with vibrant tea and sparkling notes.",
-                image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&q=80&w=600"
-            },
-            {
-                id: 9,
-                name: "Chocolate Fudge Cake Slice",
-                category: "pastries",
-                price: "â‚±140.00",
-                badge: "Sweet Treat",
-                desc: "Decadent, rich chocolate layer cake that satisfies any sweet craving.",
-                image: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&q=80&w=600"
-            }
-        ];
+      const header = document.querySelector('.site-header');
+      const menuToggle = document.querySelector('.menu-toggle');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const form = document.getElementById('inquiry-form');
+      const statusBox = document.getElementById('form-status');
 
-        let currentCategory = 'all';
+      const handleScroll = () => {
+        header.classList.toggle('scrolled', window.scrollY > 10);
+      };
+      window.addEventListener('scroll', handleScroll);
+      handleScroll();
 
-        // Render Menu Items
-        function renderMenu(itemsToRender) {
-            const grid = document.getElementById('menuGrid');
-            const noResults = document.getElementById('noResults');
-            grid.innerHTML = '';
+      menuToggle.addEventListener('click', () => {
+        const isOpen = mobileMenu.classList.toggle('open');
+        menuToggle.setAttribute('aria-expanded', String(isOpen));
+      });
 
-            if (itemsToRender.length === 0) {
-                noResults.classList.remove('hidden');
-                return;
-            } else {
-                noResults.classList.add('hidden');
-            }
-
-            itemsToRender.forEach(item => {
-                const card = document.createElement('div');
-                card.className = "bg-warmBg rounded-3xl overflow-hidden border border-amberGlow/25 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between group";
-                card.innerHTML = `
-                    <div class="relative overflow-hidden h-52">
-                        <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <span class="absolute top-3 left-3 bg-espresso/80 backdrop-blur-md text-amberGlow text-xs font-semibold px-3 py-1 rounded-full border border-amberGlow/30">
-                            ${item.badge}
-                        </span>
-                        <span class="absolute top-3 right-3 bg-warmBg/90 backdrop-blur-md text-roast font-bold text-sm px-3 py-1 rounded-full shadow-md">
-                            ${item.price}
-                        </span>
-                    </div>
-                    <div class="p-6 flex flex-col flex-grow justify-between">
-                        <div>
-                            <h3 class="font-playfair text-xl font-bold text-roast mb-2 group-hover:text-caramel transition-colors">${item.name}</h3>
-                            <p class="text-roast/75 text-xs sm:text-sm leading-relaxed mb-4">${item.desc}</p>
-                        </div>
-                        <div class="pt-4 border-t border-roast/10 flex items-center justify-between">
-                            <span class="text-xs text-caramel font-semibold uppercase tracking-wider">Krāv Café Rosario</span>
-                            <button onclick="openModal('reserveModal')" class="text-xs bg-roast hover:bg-caramel text-cream px-3.5 py-2 rounded-xl transition-colors font-medium">
-                                Order / Inquire
-                            </button>
-                        </div>
-                    </div>
-                `;
-                grid.appendChild(card);
-            });
-        }
-
-        // Switch Menu Category
-        function switchCategory(category) {
-            currentCategory = category;
-            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-            event.currentTarget.classList.add('active');
-            filterMenu();
-        }
-
-        // Filter Menu by Search & Category
-        function filterMenu() {
-            const query = document.getElementById('menuSearch').value.toLowerCase();
-            const filtered = menuItems.filter(item => {
-                const matchesCategory = currentCategory === 'all' || item.category === currentCategory;
-                const matchesSearch = item.name.toLowerCase().includes(query) || item.desc.toLowerCase().includes(query);
-                return matchesCategory && matchesSearch;
-            });
-            renderMenu(filtered);
-        }
-
-        // Mobile Menu Toggle
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            const icon = document.getElementById('menuIcon');
-            menu.classList.toggle('hidden');
-            if (menu.classList.contains('hidden')) {
-                icon.className = "fa-solid fa-bars text-xl";
-            } else {
-                icon.className = "fa-solid fa-xmark text-xl";
-            }
-        }
-
-        // Modal Controls
-        function openModal(modalId) {
-            document.getElementById(modalId).classList.remove('hidden');
-            document.getElementById(modalId).classList.add('flex');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.remove('flex');
-            document.getElementById(modalId).classList.add('hidden');
-            document.body.style.overflow = 'auto';
-        }
-
-        function handleReservation(event) {
-            event.preventDefault();
-            closeModal('reserveModal');
-            document.getElementById('successModalText').innerText = "Thank you! Your table inquiry or order note has been sent to Krāv Café Rosario.";
-            openModal('successModal');
-            event.target.reset();
-        }
-
-        // Loyalty Card Logic
-        let loyaltyStamps = parseInt(localStorage.getItem('chn_rosario_loyalty_stamps')) || 0;
-
-        function updateLoyaltyDisplay() {
-            const container = document.getElementById('loyaltyStamps');
-            const countEl = document.getElementById('loyaltyCount');
-            const msgEl = document.getElementById('loyaltyMessage');
-            const btnEl = document.getElementById('loyaltyStampButton');
-
-            container.innerHTML = '';
-            countEl.innerText = loyaltyStamps;
-
-            for (let i = 1; i <= 12; i++) {
-                const stamp = document.createElement('div');
-                const isStamped = i <= loyaltyStamps;
-                stamp.className = `h-14 rounded-2xl border flex flex-col items-center justify-center text-xs font-bold transition-all ${
-                    isStamped 
-                        ? 'bg-amberGlow text-espresso border-amberGlow shadow-md' 
-                        : 'bg-espresso/50 border-amberGlow/20 text-cream/40'
-                }`;
-                stamp.innerHTML = `
-                    <span>${i}</span>
-                    ${isStamped ? '<i class="fa-solid fa-mug-hot text-[10px] mt-0.5"></i>' : '<span class="text-[9px] font-normal opacity-60">stamp</span>'}
-                `;
-                container.appendChild(stamp);
-            }
-
-            if (loyaltyStamps === 6) {
-                msgEl.innerText = "ðŸŽ‰ Milestone reached: 50% off your drink or pastry!";
-            } else if (loyaltyStamps >= 12) {
-                msgEl.innerText = "ðŸ† Card completed! Enjoy your FREE signature drink!";
-                btnEl.innerText = "Redeem Reward & Reset Card";
-            } else {
-                msgEl.innerText = `${12 - loyaltyStamps} more visit(s) until your free signature drink!`;
-                btnEl.innerText = "Record completed purchase";
-            }
-        }
-
-        function recordLoyaltyPurchase() {
-            if (loyaltyStamps >= 12) {
-                loyaltyStamps = 0;
-            } else {
-                loyaltyStamps++;
-            }
-            localStorage.setItem('chn_rosario_loyalty_stamps', loyaltyStamps);
-            updateLoyaltyDisplay();
-        }
-
-        // Custom Icons Logic
-        function applyCustomIcon() {
-            const cardKey = document.getElementById('customizerCardSelect').value;
-            const iconName = document.getElementById('customizerIconSelect').value;
-            const slot = document.getElementById(`icon-slot-${cardKey}`);
-            if (slot) {
-                slot.innerHTML = `<i data-lucide="${iconName}"></i>`;
-                lucide.createIcons();
-            }
-            closeModal('iconCustomizerModal');
-        }
-
-        // Initialize on Load
-        window.addEventListener('DOMContentLoaded', () => {
-            renderMenu(menuItems);
-            updateLoyaltyDisplay();
-            lucide.createIcons();
+      document.querySelectorAll('.mobile-links a').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          menuToggle.setAttribute('aria-expanded', 'false');
         });
-    </script>
-</body>
-</html>
+      });
 
+      const revealItems = document.querySelectorAll('.reveal');
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14 });
+      revealItems.forEach((item) => revealObserver.observe(item));
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !email || !message) {
+          statusBox.textContent = 'Please complete all fields before submitting.';
+          statusBox.className = 'status error';
+          return;
+        }
+
+        const emailPattern = /^[^s@]+@[^s@]+.[^s@]+$/;
+        if (!emailPattern.test(email)) {
+          statusBox.textContent = 'Please enter a valid email address.';
+          statusBox.className = 'status error';
+          return;
+        }
+
+        if (message.length < 12) {
+          statusBox.textContent = 'Please add a few more words so we know what you are asking about.';
+          statusBox.className = 'status error';
+          return;
+        }
+
+        statusBox.textContent = 'Inquiry received. Thank you!';
+        statusBox.className = 'status success';
+        form.reset();
+      });
+    
+      (function () {
+        const secs = [
+          ["Starters & Appetizers", "", [
+            "Pink Harvest Croquettes|335|Mashed potato and beetroot shaped into crisp golden bites, served with garlic aioli.",
+            "Melted Keso Croquettes|335|Creamy mashed potato stuffed with quick-melt cheese, fried until crunchy on the outside and soft inside, with garlic aioli on the side.",
+            "Pandesal Tomato Bruschetta|265|Toasted slices of pandesal topped with fresh tomato dice, basil pesto, parsley, and a drizzle of balsamic glaze.",
+            "Lengua Escabeche Bites|399|Tender ox tongue tossed in a bright sweet-and-sour escabeche sauce, finished with red radish rounds, julienned leeks, and sesame seeds.",
+            "Roasted Garlic Pandesal Flatbread|265|Pressed and toasted pandesal brushed with minced garlic and cheese, baked until the edges are crisp.",
+            "Chili Cheese Pandesal Flatbread|265|Pandesal transformed into flatbread, topped with cheese and chili flakes for a gentle heat.",
+            "Hidden Garden Sandwich|350|Chef's choice of fresh, seasonal ingredients layered on toasted bread with our house spread, crisp greens, bright veggies, and savory fillings that change with what's good today."]],
+          ["Soups & Salads", "", [
+            "Cream Of Mushroom Soup|330|A silky, earthy cream of mushroom soup, served warm and generous—perfect for sharing and starting the meal slow and cozy.",
+            "Cream Of Pumpkin Soup||Smooth, naturally sweet pumpkin blended into a velvety cream soup, rich and comforting with a gentle warmth, made for two.",
+            "Hidden Garden Cafe Signature Salad|365|Bowtie pasta tossed with romaine lettuce, cherry tomatoes, red onion, yacon dice, shaved red radish, and minced parsley, finished with HGC's honey-lemon mustard dressing.",
+            "Crispy Crab & Mangga Salad|475|Crispy crab and ripe mango on a bed of lettuce, coated in a creamy blend of ambai sauce, all-purpose cream, worcestershire sauce, and garlic powder.",
+            "Grilled Watermelon With Calamansi Vinaigrette|285|Lightly grilled watermelon over arugula and romaine, with shaved red radish and parsley finished with a calamansi-vanilla vinaigrette.",
+            "Ensaladang Talong|305|Smoky grilled eggplant tossed with fresh tomato, onion, and a light, tangy dressing.",
+            "Caesar Salad||A generous bowl of crisp, leafy greens tossed the hidden garden way—creamy, savory, and bright, with just the right crunch."]],
+          ["Pasta & Noodles", "", [
+            "Seafood Pusit Ink Pasta|585|Black pasta in a tomato and cream sauce simmered with shrimp broth, garlic, onion, assorted seafood, and crab sticks, finished with cherry tomatoes and parmesan.",
+            "Filipino Style Spaghetti & Meatballs|425|Meatballs in a sweet, creamy tomato sauce with garlic, onion, chicken broth, and lots of melty cheese.",
+            "Ham & Cheese Macaroni|395|Elbow macaroni tossed in a creamy three cheese sauce with ham, carrots, garlic, and onion, baked-style in flavor.",
+            "Pancit Bihon|375|Thin rice noodles stir-fried with vegetables and savory seasonings for a light yet filling plate.",
+            "Carbonara||Creamy, savory pasta coated in a rich white sauce with cheese and aromatics."]],
+          ["Main Courses", "", [
+            "#Chicken",
+            "Tagaytay Garlic Chicken|419|Tender chicken seasoned with garlic, onion, and pepper, served on fresh greens and simple sides.",
+            "Hidden Garden Chicken Gratin|480|Baked chicken breast layered with bechamel cheese, and a mix of herbs, romaine, cucumber, tomato, red onion, and parsley.",
+            "Fiesta Chicken Parmigiano|530|Chicken topped with tomato sauce and a generous layer of melted cheese, baked until golden.",
+            "Pinagbakasyong Manok|670|A whole chicken \"sent on vacation\" in a long, lazy marinade of citrus, herbs, and spices, then fried until the skin is golden and the meat stays juicy."]],
+          ["Main Courses", "", [
+            "#Sizzling & Pork",
+            "Sizzling Pork Sisig|399|Finely chopped pork cooked on a hot plate with onions and house spices until crispy and sizzling.",
+            "Crispy Garden Tofu Sisig|355|Crispy tofu cubes tossed with onions, peppers, and sisig-style seasoning, served sizzling on a hot plate.",
+            "Creamy Garden Dinakdakan|399|Grilled and chopped pork tossed in a creamy, tangy dressing with onions and spices, served warm on a platter."]],
+          ["Main Courses", "", [
+            "#Beef (Good for 4-5)",
+            "Tagalog Roasted Beef Shanks|2,500|Slow-roasted beef shanks simmered in a soy and oyster sauce reduction with whole peppercorns, rosemary, marble potatoes, carrots, and green beans, finished with a pepper sauce.",
+            "Tagaytay Beef Bulalo|799|Classic bone-in beef shank and marrow gently simmered until fall-off-the-bone tender in a clear, comforting broth with vegetables.",
+            "Ambai-Style Beef Caldereta|489|Rich, slow-cooked beef in a tomato-based filipino caldereta sauce with vegetables and cheese.",
+            "Ambai Style Beef Kansi|899|Slow-cooked beef in a rich, sour-savory broth that sits somewhere between bulalo and sinigang."]],
+          ["Breakfast Specials", "Each plate is served with Ambai's signature cloud eggs, seasonal vegetables, and a complimentary orange drink.", [
+            "Chicken Adobo|429|Chicken simmered in a soy, garlic, and vinegar sauce until tender and flavorful.",
+            "Daing|439|Marinated dried fish fried until crisp, with bold salty-tangy flavor.",
+            "Tapa|429|Thin slices of beef marinated in a sweet-savory garlic blend, seared until slightly caramelized.",
+            "Longganisa|429|Garlicky, slightly sweet pork sausage with a juicy bite.",
+            "English Breakfast|499|A generous plate with eggs, pork sausage, bacon, toasted bread, mushrooms, and fresh vegetables.",
+            "Buttermilk Pancake|399|Fluffy buttermilk pancakes topped with lakatan banana, powdered sugar, cherry, and chocolate or maple syrup."]],
+          ["Rice Options", "", [
+            "Steamed Plain Rice|80|", "Garlic Fried Rice|99|",
+            "Smoked Fish Fried Rice|315|Rice tossed with flakes of smoked fish, aromatics, and light seasoning.",
+            "Laing Rice|315|Steamed rice mixed with tender taro leaves in creamy coconut sauce.",
+            "Signature Blue Rice|330|Hidden Garden Cafe's coconut rice tinted naturally blue."]],
+          ["Coffee & Specialty Beverages", "", [
+            "Sago't Gulaman Espresso|160|Espresso poured over sago and gulaman with sweet syrup and ice.",
+            "Hot Biscoff Latte|260|Espresso blended with steamed milk and biscoff spread.",
+            "Truffle Mocha|260|Rich chocolate mocha with hint of truffle aroma, layered with espresso.",
+            "Butterscotch Latte|260|Espresso with milk and buttery butterscotch, warm and velvety with a caramel-like finish.",
+            "Taal Latte With Smoke|295|A signature latte lightly smoked tableside for aroma."]]
+        ];
+        const money = (v) => (v ? "₱" + v : "Ask us");
+        const item = (l) => {
+          if (l[0] === "#") return '<p class="eyebrow sub">' + l.slice(1) + "</p>";
+          const [n, p, d] = l.split("|");
+          return '<div class="it"><div class="it-h"><span class="nm">' + n + '</span><span class="price">' + money(p) + "</span></div>" + (d ? "<p>" + d + "</p>" : "") + "</div>";
+        };
+        const titles = [...new Set(secs.map((x) => x[0]))];
+        const pages = [
+          '<div class="pg cc"><span class="brand-mark">HG</span><p class="eyebrow">Hidden Garden Cafe Tagaytay</p><h3>Menu</h3><p>Slow coffee, warm company.</p><p class="eyebrow" style="font-size:.7rem">Turn the page →</p></div>',
+          '<div class="pg"><p class="eyebrow">Welcome</p><h3>Take a seat, take your time.</h3><p>Turn the page to browse what’s fresh today.</p><ul>' + titles.map((t) => "<li>" + t + "</li>").join("") + '</ul><span class="pn">1</span></div>',
+          ...secs.map((x, i) => '<div class="pg"><p class="eyebrow">Menu</p><h3>' + x[0] + "</h3>" + (x[1] ? '<p class="note">' + x[1] + "</p>" : "") + x[2].map(item).join("") + '<span class="pn">' + (i + 2) + "</span></div>"),
+          '<div class="pg cc"><span class="brand-mark">HG</span><h3>Thank you</h3><p>Tagaytay City, Cavite</p></div>'
+        ];
+        const book = document.getElementById("book"), ind = document.getElementById("book-ind");
+        const prev = document.getElementById("book-prev"), next = document.getElementById("book-next");
+        const mq = window.matchMedia("(max-width: 760px)");
+        let single, leaves, f, max;
+        const cls = (i) => (i === 0 || i === pages.length - 1 ? " cover" : "");
+        function render() {
+          leaves.forEach((l, k) => {
+            l.classList.toggle("flipped", k < f);
+            l.style.zIndex = k < f ? k + 1 : leaves.length - k;
+          });
+          book.classList.toggle("start", !single && f === 0);
+          book.classList.toggle("end", !single && f === max);
+          ind.textContent = f + " / " + max;
+          prev.disabled = f === 0;
+          next.disabled = f === max;
+        }
+        function build() {
+          single = mq.matches;
+          book.className = "book" + (single ? " single" : "");
+          book.innerHTML = "";
+          leaves = [];
+          const step = single ? 1 : 2;
+          for (let i = 0; i < pages.length; i += step) {
+            const l = document.createElement("div");
+            l.className = "leaf";
+            l.innerHTML = '<div class="face front' + cls(i) + '">' + pages[i] + "</div>" + (single ? "" : '<div class="face back' + cls(i + 1) + '">' + pages[i + 1] + "</div>");
+            book.appendChild(l);
+            leaves.push(l);
+          }
+          max = single ? leaves.length - 1 : leaves.length;
+          f = 0;
+          render();
+        }
+        const go = (d) => { f = Math.min(max, Math.max(0, f + d)); render(); };
+        prev.addEventListener("click", () => go(-1));
+        next.addEventListener("click", () => go(1));
+        document.addEventListener("keydown", (e) => {
+          if (/INPUT|TEXTAREA/.test(e.target.tagName)) return;
+          if (e.key === "ArrowRight") go(1);
+          if (e.key === "ArrowLeft") go(-1);
+        });
+        let x0 = null;
+        book.addEventListener("touchstart", (e) => { x0 = e.touches[0].clientX; }, { passive: true });
+        book.addEventListener("touchend", (e) => {
+          if (x0 === null) return;
+          const dx = e.changedTouches[0].clientX - x0;
+          if (Math.abs(dx) > 50) go(dx < 0 ? 1 : -1);
+          x0 = null;
+        });
+        mq.addEventListener("change", build);
+        build();
+      })();
+    </script>
+  </body>
+</html>
